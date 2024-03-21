@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTUALIZAR USUARIO</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <div class="Actualizar" role="region" tabindex="0">
+        <div class="container">
+            <div class="ACTUALIZAR-USUARIO">
+                <table border="3">
+                    <caption>
+                        <h1>ACTUALIZAR USUARIO</h1>
+                    </caption>
+                    <tr>
+                        <td>Nombres</td>
+                        <td>Apellidos</td>
+                        <td>Tipo de Identificación</td>
+                        <td>Usuarios</td>
+                        <td>Rol</td>
+                        <td>ID</td>
+                        <td>Modificar</td>
+                    </tr>
+                    <tr>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td></td>
+                        <td><button onclick="">Modificar</button></td>
+                    </tr>
+                </table>
+            </div>
+            <div class="USUARIO">
+                <table>
+                    <tr>
+                        <td>
+                            <h2>USUARIO</h2>
+                            <label for="nombres">Nombres </label>
+                            <input type="text" id="nombres">
+                            <br>
+                            <label for="apellidos">Apellidos </label>
+                            <input type="text" id="apellidos">
+                            <br>
+                            <label for="tipo-identificacion">Tipo Identificacion </label>
+                            <input type="text" id="tipo-identificacion">
+                            <br>
+                            <label for="numero-identificacion">Numero Identificacion </label>
+                            <input type="text" id="numero-identificacion">
+                            <br>
+                            <label for="usuario">Usuario </label>
+                            <input type="text" id="usuario">
+                            <br>
+                            <label for="contrasena">Contraseña </label>
+                            <input type="text" id="contrasena">
+                            <br>
+                            <label for="correo">Correo </label>
+                            <input type="email" id="correo">
+                            <br><br>
+                            <label for="dependencia">Dependencia </label>
+                            <select id="dependencia">
+                                <option>Secretaria de educacion</option>
+                                <option>Secretaria de planeacion</option>
+                                <option>Secretaria de salud</option>
+                                <option>Secretaria de gobierno</option>
+                            </select>
+                            <br><br>
+                            <input type="button" value="Actualizar">
+                            <button onclick="salir()">Salir</button>
+                        </td>
+                    </tr>
+                </table>
+            </div>
+        </div>
+
+        <script>
+            function salir() {
+                window.open("Login.html", "_self");
+            }
+        </script>
+</body>
+
+</html>

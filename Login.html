@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> INICIO </title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <br>
+    <br>
+    <br>
+    <h2>INICIO DE SESION</h2>
+    <label for="usuario">USUARIO</label><br>
+    <input type="text" id="usuario" name="usuario"><br>
+    <label for="contrasena">CONTRASEÑA</label><br>
+    <input type="password" id="contrasena" name="contrasena"><br>
+    <button onclick="validateLogin()">Iniciar Sesión</button>
+    <button type="button">Registrarse</button>
+    <script>
+        function validateLogin() {
+            var usuario = document.getElementById("usuario").value;
+            var contrasena = document.getElementById("contrasena").value;
+
+            if (usuario === "admin" && contrasena === "1234") {
+
+                window.open("GestionUsuario.html", "_self");
+
+            } else {
+                alert("Credenciales incorrectas");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gestión de Usuarios</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <h2>Gestión de Usuarios</h2>
+
+    <label for="opciones">Bienvenido</label><br>
+    <label for="opciones">Selecciona Tu Opción:</label><br>
+    <button>1. Crear Secretarias De Despacho</button><br>
+    <button onclick="CrearCiuda()">2. Crear Ciudadanos</button><br>
+    <button onclick="CrearAdmin()">3. Crear Administradores</button><br>
+    <button onclick="ActuUsua()">4. Actualizar Usuarios Registrados</button><br>
+    <button onclick="ElimUsua() ">5. Eliminar Usuarios Registrados</button><br>
+    <button onclick="VerUsuario()">6. Mostrar Usuarios Registrados</button><br>
+    <button onclick="salir()">7. Salir</button>
+
+    <script>
+        function CrearAdmin() {
+            window.open("CrearAdmin.html", "_self");
+        }
+        function salir() {
+            window.open("Login.html", "_self");
+        }
+        function VerUsuario() {
+            window.open("VerUsuCrea.html", "_self");
+        }
+        function CrearCiuda() {
+            window.open("CrearCiuda.html", "_self");
+        }
+        function ActuUsua() {
+            window.open("ActuUsua.html", "_self");
+        }
+        function ElimUsua() {
+            window.open("ElimUsua.html", "_self");
+        }
+    </script>
+</body>
+
+</html>

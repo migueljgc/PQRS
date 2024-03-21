@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro De Ciudadano</title>
+    <link rel="stylesheet" href="Style.css">
+</head>
+
+<body>
+    <h2>Registro De Ciudadano</h2>
+    <label for="nombres">Nombres</label>
+    <input type="text" id="nombres" name="nombres"><br>
+    <label for="apellidos">Apellidos</label>
+    <input type="text" id="apellidos" name="apellidos"><br>
+    <label for="tipoIdentificacion">Tipo De Identificación</label>
+    <select id="tipoIdentificacion" name="tipoIdentificacion">
+        <option value="cc">CC</option>
+        <option value="ti">TI</option>
+    </select><br>
+    <label for="numeroIdentificacion">Numero de Identificación</label>
+    <input type="text" id="numeroIdentificacion" name="numeroIdentificacion"><br>
+    <label for="correo">Correo</label>
+    <input type="text" id="correo" name="correo"><br>
+    <label for="usuario">Usuario</label>
+    <input type="text" id="usuario" name="usuario"><br>
+    <label for="contrasena">Contraseña</label>
+    <input type="password" id="contrasena" name="contrasena"><br>
+    <button onclick="registrarAdministrador()">Registrar</button>
+    <button onclick="salir()">Salir</button>
+
+    <script>
+        function registrarAdministrador() {
+            alert("Administrador registrado correctamente");
+        }
+
+        function salir() {
+            window.open("Login.html", "_self");
+        }
+    </script>
+</body>
+
+</html>
