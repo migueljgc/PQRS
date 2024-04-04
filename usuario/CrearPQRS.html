@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craer PQRS</title>
+    <link rel="stylesheet" href="../Style/Style.css">
+    <Script src="../../Script/script.js"></Script>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="usa">
+        <div class="menu">
+            <header class="main-header">
+                <label for="btn-nav" class="btn-nav"><i class="fas fa-bars"></i></label>
+                <input type="checkbox" id="btn-nav">
+
+                <nav>
+                    <ul class="men">
+                        <li><a href=""></a></li>
+
+                    </ul>
+                </nav>
+
+            </header>
+        </div>
+        <div class="usuario">
+            <div class="user-menu">
+                <div class="user-info">
+                    <img src="../iconprofile.png" alt="Foto de perfil" class="profile-picture" width="35%" height="40%">
+
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <span class="username">¡Hola, Admin!</span><br>
+                    <a href="#"><i class="fa fa-plus"></i>Editar usuario</a>
+                    <a href="../Login.html"><i class="fa fa-sign-out"></i> Salir</a>
+                </div>
+            </div>
+        </div>
+        <div class="imag"><img src="../pqrspng.png" width="55%" height="60%"></div>
+        <div class="datos"></div>
+    </div><br>
+    <form id="RegistroPQRS" action="../conexion.php">
+        <h2>Ingrese su PQRS</h2>
+        <label for="Titulo">Titulo</label>
+        <input type="text" id="Titulo" name="Titulo"><br><br>
+        <label for="tipPQRS">Tipo De Solicitud</label>
+        <select id="tiposoli" name="tiposoli">
+            <option value=""></option>
+            <option value="Queja">Queja</option>
+            <option value="Reclamo">Reclamo</option>
+            <option value="Solicitud">Solicitud</option>
+        </select><br><br>
+        <label for="tipdepe">Dependencia</label>
+        <select id="tipodepe" name="tipodepe">
+            <option value=""></option>
+            <option value="Queja">Queja</option>
+            <option value="Reclamo">Reclamo</option>
+            <option value="Solicitud">Solicitud</option>
+        </select><br><br>
+        <textarea name="PQRS" rows="10" cols="50" placeholder="Escribe la informacion"></textarea>
+
+
+
+        <br><br>
+        <input type="checkbox" id="acceptTerms">
+        <label for="acceptTerms">Acepta <a href="#" id="verter">Términos y Condiciones</a></label>
+        <div class="ter" id="term">
+            <h2>Términos y Condiciones</h2>
+            <p>Aquí va el texto de tus términos y condiciones.</p>
+            <button onclick="closePopup()">Cerrar</button>
+        </div>
+        <br><br>
+
+
+        <button type="submit" onclick="envio()">Registrar</button>
+    </form>
+    <script>
+        // Mostrar/ocultar el menú desplegable al hacer clic en el usuario
+        var userMenu = document.querySelector(".user-menu");
+        var dropdownContent = userMenu.querySelector(".dropdown-content");
+
+        userMenu.addEventListener("click", function () {
+            dropdownContent.style.display = dropdownContent.style.display === "none" ? "block" : "none";
+        });
+
+        // Cerrar el menú desplegable si se hace clic fuera de él
+        window.addEventListener("click", function (e) {
+            if (!userMenu.contains(e.target)) {
+                dropdownContent.style.display = "none";
+            }
+        });
+
+        document.getElementById('verter').addEventListener('click', function (e) {
+            e.preventDefault();
+            document.getElementById('term').style.display = 'block';
+        });
+
+        formulario.addEventListener('submit', function (event) {
+            event.preventDefault();
+
+            // Restablecer el formulario
+            formulario.reset();
+        });
+        function envio() {
+
+            document.getElementById('RegistroPQRS').addEventListener('submit', function (event) {
+                var correo = document.getElementById('Correo').value;
+                var correoRegExp = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+
+                // Si el correo no cumple con el formato válido, impedir el envío del formulario
+                if (!correoRegExp.test(correo)) {
+                    alert('Por favor, complete todos los campos y acepte los términos y condiciones y/o ingrese un correo electrónico válido.');
+                    event.preventDefault(); // Impide que el formulario se envíe
+                }
+                else {
+                    var titulo = document.getElementById('Titulo').value;
+                    var correo = document.getElementById('Correo').value;
+                    var tipoIdentificacion = document.getElementById('tipoIdentificacion').value;
+                    var mensaje = document.querySelector('textarea[name="PQRS"]').value;
+                    var acceptTerms = document.getElementById('acceptTerms').checked;
+
+                    if (titulo.trim() === '' || correo.trim() === '' || tipoIdentificacion.trim() === '' || mensaje.trim() === '' || !acceptTerms) {
+                        alert('Por favor, complete todos los campos y acepte los términos y condiciones y/o ingrese un correo electrónico válido.');
+                    } else {
+                        document.getElementById('RegistroPQRS').submit();
+                    }
+                }
+            });
+
+        }
+    </script>
+</body>
+
+</html>

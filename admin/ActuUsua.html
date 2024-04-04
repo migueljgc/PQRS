@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ACTUALIZAR USUARIO</title>
+    <link rel="stylesheet" href="../Style/Style.css">
+    <Script src="../../Script/script.js"></Script>
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="usa">
+        <div class="menu">
+            <header class="main-header">
+                <label for="btn-nav" class="btn-nav"><i class="fas fa-bars"></i></label>
+                <input type="checkbox" id="btn-nav">
+
+                <nav>
+                    <ul class="men">
+                        <li><a href="">Crear Secretarias De Despacho</a></li>
+                        <li><a href="GestionUsuario.html">Gestion Usuario</a></li>
+                        <li><a href="CrearCiuda.html">Crear Ciudadanos</a></li>
+                        <li><a href="CrearAdmin.html">Crear Administradores</a></li>
+                        <li><a href="CrearSecreDesp.html">Crear Secretario de Despacho</a></li>
+                        <li><a href="ElimUsua.html">Eliminar Usuarios Registrados</a></li>
+                        <li><a href="VerUsuCrea.html">Mostrar Usuarios Registrados</a></li>
+                    </ul>
+                </nav>
+
+            </header>
+        </div>
+        <div class="usuario">
+            <div class="user-menu">
+                <div class="user-info">
+                    <img src="../iconprofile.png" alt="Foto de perfil" class="profile-picture" width="35%" height="40%">
+
+                    <i class="fa fa-caret-down"></i>
+                </div>
+                <div class="dropdown-content">
+                    <span class="username">¡Hola, Admin!</span><br>
+                    <a href="#"><i class="fa fa-plus"></i>Editar usuario</a>
+                    <a href="../Login.html"><i class="fa fa-sign-out"></i> Salir</a>
+                </div>
+            </div>
+        </div>
+        <div class="imag"><img src="../pqrspng.png" width="55%" height="60%"></div>
+        <div class="datos"></div>
+    </div><br>
+    <div class="container" role="region" tabindex="0">
+        <div class="ACTUALIZAR-USUARIO">
+            <table id="actu" border="3">
+                <caption>
+                    <h1>ACTUALIZAR USUARIO</h1>
+                </caption>
+                <tr>
+                    <td>Nombres</td>
+                    <td>Apellidos</td>
+                    <td>Tipo de Identificación</td>
+                    <td>Usuarios</td>
+                    <td>Rol</td>
+                    <td>ID</td>
+                    <td>Modificar</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button onclick="">Modificar</button>
+                    </td>
+                </tr>
+            </table>
+        </div>
+        <div class="USUARIO">
+            <table>
+                <tr>
+                    <td>
+                        <h2>USUARIO</h2>
+                        <label for="nombres">Nombres </label>
+                        <input type="text" id="nombres">
+                        <br>
+                        <label for="apellidos">Apellidos </label>
+                        <input type="text" id="apellidos">
+                        <br>
+                        <label for="tipo-identificacion">Tipo Identificacion </label>
+                        <input type="text" id="tipo-identificacion">
+                        <br>
+                        <label for="numero-identificacion">Numero Identificacion </label>
+                        <input type="text" id="numero-identificacion">
+                        <br>
+                        <label for="usuario">Usuario </label>
+                        <input type="text" id="usuario">
+                        <br>
+                        <label for="contrasena">Contraseña </label>
+                        <input type="text" id="contrasena">
+                        <br>
+                        <label for="correo">Correo </label>
+                        <input type="email" id="correo">
+                        <br><br>
+                        <label for="dependencia">Dependencia </label>
+                        <select id="dependencia">
+                            <option>Secretaria de educacion</option>
+                            <option>Secretaria de planeacion</option>
+                            <option>Secretaria de salud</option>
+                            <option>Secretaria de gobierno</option>
+                        </select>
+                        <br><br>
+                        <input type="button" value="Actualizar">
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+    <script>
+        // Mostrar/ocultar el menú desplegable al hacer clic en el usuario
+        var userMenu = document.querySelector(".user-menu");
+        var dropdownContent = userMenu.querySelector(".dropdown-content");
+
+        userMenu.addEventListener("click", function () {
+            dropdownContent.style.display = dropdownContent.style.display === "none" ? "block" : "none";
+        });
+
+        // Cerrar el menú desplegable si se hace clic fuera de él
+        window.addEventListener("click", function (e) {
+            if (!userMenu.contains(e.target)) {
+                dropdownContent.style.display = "none";
+            }
+        });
+    </script>
+</body>
+
+</html>

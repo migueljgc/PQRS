@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Login y Registro </title>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap"
+        rel="stylesheet">
+    </link>
+    <link rel="stylesheet" href="/Style/Style_login.css">
+    <script src="https://kit.fontawesome.com/41bcea2ae3.js" crossorigin="anonymous"></script>
+</head>
+
+<body>
+    <div class="usa">
+        <div class="imag"><img src="pqrspng.png" width="55%" height="60%"></div>
+        <div class="datos"></div>
+    </div>
+
+    <main>
+
+        <div class="contenedor__todo">
+
+            <div class="cuadro__atras">
+
+                <div class="cuadro__atras--login">
+                    <h3>¿Ya tienes cuenta?</h3>
+                    <p>Inicia sesion para entrar a la pagina</p>
+                    <button id="btn__iniciar-sesion">Iniciar Sesión</button>
+                </div>
+                <div class="cuadro__atras--register">
+                    <h3>¿Aun no tienes cuenta?</h3>
+                    <p>Registrate para entrar a la pagina</p>
+                    <button id="btn__registrarse">Registrarse</button>
+                </div>
+            </div>
+            <div class="contenedor__login-register">
+
+                <form action="" class="formulario__register">
+                    <h2>Regístrarse</h2>
+                    <label for="usuario">USUARIO</label><br>
+                    <input type="text" id="usuario1" name="usuario"><br>
+                    <label for="contrasena">CONTRASEÑA</label><br>
+                    <input type="password" id="contrasena1" name="contrasena"><br>
+                    <button type="button">Registrarse</button>
+                </form>
+
+                <form class="formulario__login">
+                    <h2>INICIO DE SESION</h2>
+                    <label for="usuario">USUARIO</label><br>
+                    <input type="text" id="usuario" name="usuario"><br>
+                    <label for="contrasena">CONTRASEÑA</label><br>
+                    <input type="password" id="contrasena" name="contrasena"><br>
+                    <button id="Iniciar--sesion" onclick="validateLogin()">Iniciar Sesión</button>
+
+                </form>
+
+
+            </div>
+
+
+        </div>
+    </main>
+    <script src="/Script/script_login.js"></script>
+    <script>
+
+        function validateLogin() {
+            var usuario = document.getElementById("usuario").value;
+            var contrasena = document.getElementById("contrasena").value;
+
+            if (usuario === "admin" && contrasena === "1234") {
+
+                window.open("/admin/GestionUsuario.html", "_self");
+
+            }
+            else if (usuario === "usuario" && contrasena === "1234") {
+
+                window.open("/usuario/GestionUsuario.html", "_self");
+
+            }
+            else if (usuario === "secretario" && contrasena === "1234") {
+
+                window.open("/secreDespa/GestionUsuario.html", "_self");
+
+            } else {
+                alert("Credenciales incorrectas");
+                return false;
+            }
+        }
+    </script>
+</body>
+
+</html>
